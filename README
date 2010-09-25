@@ -1,0 +1,13 @@
+A patch for Bash to log all actions to syslog in real time.
+
+Logs to LOCAL5. If nothing else is logging to LOCAL5, you can do this to log all Bash output to it's own log file
+
+local5.*						/var/log/bash.log
+
+Otherwise, it'll go into messages or whatever is the "catch all".
+
+I'm including the spec file, RPM for 64bit, and SRPM if you need to rebuild for 32bit or something.
+
+Questions, email me at seth AT migrantgeek DOT com
+
+Seth
