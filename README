@@ -8,6 +8,11 @@ Otherwise, it'll go into messages or whatever is the "catch all".
 
 I'm including the spec file, RPM for 64bit, and SRPM if you need to rebuild for 32bit or something.
 
+Here's what a sample looks like
+
+    Sep 25 01:40:28 hostname bash: history: [pid:7674 user:root] ls -ltr
+
+
 Questions, email me at seth AT migrantgeek DOT com
 
 Seth
