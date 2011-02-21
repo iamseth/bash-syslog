@@ -41,3 +41,9 @@ INSTALLATION
 	and  copy the spec file to /usr/src/redhat/SPECS
 	
 	Build the binary with rpmbuild -ba and install RPM from /usr/src/redhat/RPMS/
+
+	To save time, I've provided a source RPM here with the patch already applied
+		https://github.com/downloads/migrantgeek/bash-syslog/bash-3.2-24.src.rpm
+
+	If you're using CentOS or RedHat 5, the following RPM will be easiest
+		https://github.com/downloads/migrantgeek/bash-syslog/bash-3.2-24.x86_64.rpm
