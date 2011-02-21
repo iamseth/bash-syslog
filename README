@@ -1,18 +1,43 @@
-A patch for Bash to log all actions to syslog in real time.
+README
+	bash-3.2-syslog.patch -- A patch for Bash to log all actions to syslog in real time.
+	bash.spec -- A spec file for building an RPM with the patch added.
 
-Logs to LOCAL5. If nothing else is logging to LOCAL5, you can do this to log all Bash output to it's own log file
+PURPOSE
+	Will log bash history to syslog in real time. Good for remote bash history logging. It logs to LOCAL5 as is.
 
-local5.*						/var/log/bash.log
+	Example:
+	    Sep 25 01:40:28 hostname bash: history: [pid:7674 user:root] ls -ltr
 
-Otherwise, it'll go into messages or whatever is the "catch all".
+VERSION
+	The current version is 0.1.
 
-I'm including the spec file, RPM for 64bit, and SRPM if you need to rebuild for 32bit or something.
+LICENSE
 
-Here's what a sample looks like
+	The current license for this version is the "MIT License" as described by the Open Source Initiative.
 
-    Sep 25 01:40:28 hostname bash: history: [pid:7674 user:root] ls -ltr
+	Copyright 2011 Seth Miller
+	
+	Permission is hereby granted, free of charge, to any person obtaining a copy
+	of this software and associated documentation files (the "Software"), to deal
+	in the Software without restriction, including without limitation the rights
+	to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+	copies of the Software, and to permit persons to whom the Software is
+	furnished to do so, subject to the following conditions:
 
+	The above copyright notice and this permission notice shall be included in
+	all copies or substantial portions of the Software.
 
-Questions, email me at seth AT migrantgeek DOT com
+	THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+	IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+	FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+	AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+	LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+	THE SOFTWARE.
 
-Seth
+INSTALLATION
+	
+	Install the source RPM for Bash 3.2 and copy this file to the directory /usr/src/redhat/SOURCES 
+	and  copy the spec file to /usr/src/redhat/SPECS
+	
+	Build the binary with rpmbuild -ba and install RPM from /usr/src/redhat/RPMS/
