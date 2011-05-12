@@ -101,15 +101,15 @@ diff -crB bash-3.2/lib/readline/history.c bash-3.2.new/lib/readline/history.c
   
 +   if (logme) {
 +     if (strlen(string)<600) {
-+       syslog(LOG_LOCAL5 | LOG_INFO, "history: [pid:%d user:%s] %s",
-+                           getpid(), getlogin(), string);
++       syslog(LOG_LOCAL5 | LOG_INFO, "history: [pid:%d user:%s uid:%s] %s",
++                           getpid(), getlogin(), getuid(), string);
 +     } else {
 +       char trunc[600];
 +      
 +       strncpy(trunc,string,sizeof(trunc));
 +       trunc[sizeof(trunc)-1]='\0';
-+       syslog(LOG_LOCAL5| LOG_INFO, "history: [pid:%d user:%s] %s(++TRUNC)",
-+                            getpid(), getlogin(), trunc);
++       syslog(LOG_LOCAL5| LOG_INFO, "history: [pid:%d user:%s uid:%s] %s(++TRUNC)",
++                            getpid(), getlogin(), getuid(), trunc);
 +     }
 +   }
 + 
